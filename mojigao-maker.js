@@ -2,6 +2,7 @@ const JikkouButton = document.getElementById('jikkou');
 const resultDivided = document.getElementById('result-area');
 const TextInput = document.getElementById("input-text");
 const HozonButton = document.getElementById("hozon");
+const kesuButton = document.getElementById("kesu");
 const canvas = document.getElementById('board');
 /***
 const mojipos=[
@@ -16,10 +17,22 @@ const mojipos=[
 const mojipos =
 [
   [
+    [-10, -90],
+    [40, -90],
+    [-45,20]
+  ],
+  [
     [-30, -110],
     [35, -110],
     [40, -30],
     [-10,65]
+  ],
+  [
+    [0, -5],
+    [60, -5],
+    [0, -35],
+    [60, -35],
+    [-10,55]
   ],
   [
     [0, -10],
@@ -35,9 +48,21 @@ const mojipos =
 const mojisize=
 [
   [
+    [200,150],
+    [200,150],
+    [450,100]
+  ],
+  [
     [250,187.5],
     [250,187.5],
     [120,130],
+    [300,60]
+  ],
+  [
+    [160,55],
+    [160,55],
+    [150,112.5],
+    [150,112.5],
     [300,60]
   ],
   [
@@ -51,9 +76,9 @@ const mojisize=
 ];
 
 HozonButton.onclick = () => {
-  let link = document.createElement('a');
   //let text=TextInput.value;
   let canvas = document.querySelector("#board");
+  let link = document.createElement('a');
   link.href = canvas.toDataURL();//URLCanvas();
 
   link.download = 'canvas.png';
@@ -65,7 +90,11 @@ HozonButton.onclick = () => {
   ***/
   link.click();
 }
+kesuButton.onclick = () => {
+}
 JikkouButton.onclick = () => {
+  var context = canvas.getContext('2d');
+  context.clearRect(0, 0, canvas.width, canvas.height);
   let imgCount = 0;
   let text = TextInput.value;
   let kaotype=0;//どのタイプの文字顔を使うか
@@ -123,13 +152,11 @@ function pushKaoBack(context) {
   return image;
 }
 function DrowText(text) {
-  const board = document.querySelector("#board");
-  const ctx = board.getContext("2d");
+  const ctx = canvas.getContext("2d");
   ctx.font = "48px serif";
   ctx.fillText(text, 30, 150);
 }
 function URLCanvas() {
-  let canvas = document.querySelector("#board");
   return canvas.toDataURL();
 }
 
