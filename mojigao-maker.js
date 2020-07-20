@@ -2,7 +2,6 @@ const JikkouButton = document.getElementById('jikkou');
 const resultDivided = document.getElementById('result-area');
 const TextInput = document.getElementById("input-text");
 const HozonButton = document.getElementById("hozon");
-const kesuButton = document.getElementById("kesu");
 const canvas = document.getElementById('board');
 /***
 const mojipos=[
@@ -89,8 +88,6 @@ HozonButton.onclick = () => {
   }
   ***/
   link.click();
-}
-kesuButton.onclick = () => {
 }
 JikkouButton.onclick = () => {
   var context = canvas.getContext('2d');
