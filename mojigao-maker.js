@@ -2,14 +2,17 @@ const JikkouButton = document.getElementById('jikkou');
 const resultDivided = document.getElementById('result-area');
 const TextInput = document.getElementById("input-text");
 const HozonButton = document.getElementById("hozon");
-const kesuButton = document.getElementById("kesu");
 const canvas = document.getElementById('board');
 /***
 const mojipos=[
-  [50,0],
-  [80,0],
-  [75,30],
-  [55,80]
+  [
+    [0, -20],
+    [120, -20],
+    [0, -80],
+    [120, -80],
+    [80, -50],
+    [-20,130]
+  ]
 ];
 ***/
 //文字の場所。
@@ -17,63 +20,63 @@ const mojipos=[
 const mojipos =
 [
   [
-    [-10, -90],
-    [40, -90],
-    [-45,20]
+    [-20, -180],
+    [80, -180],
+    [-90,40]
   ],
   [
-    [-30, -110],
-    [35, -110],
-    [40, -30],
-    [-10,65]
-  ],
-  [
-    [0, -5],
-    [60, -5],
-    [0, -35],
-    [60, -35],
-    [-10,55]
+    [-60, -220],
+    [70, -220],
+    [80, -60],
+    [-20,130]
   ],
   [
     [0, -10],
-    [60, -10],
-    [0, -40],
-    [60, -40],
-    [40, -25],
-    [-10,65]
+    [120, -10],
+    [0, -70],
+    [120, -70],
+    [-20,110]
+  ],
+  [
+    [0, -20],
+    [120, -20],
+    [0, -80],
+    [120, -80],
+    [80, -50],
+    [-20,130]
   ]
 ];
-
 //パターンがいくつか(2)の中にそれぞれの文字のサイズ(3)(の中のxのサイズとyのサイズ(4))
 const mojisize=
 [
   [
-    [200,150],
-    [200,150],
-    [450,100]
+    [400,300],
+    [400,300],
+    [900,200]
   ],
   [
-    [250,187.5],
-    [250,187.5],
-    [120,130],
-    [300,60]
+    [500,375],
+    [500,375],
+    [240,260],
+    [600,120]
   ],
   [
-    [160,55],
-    [160,55],
-    [150,112.5],
-    [150,112.5],
-    [300,60]
+    [320,110],
+    [320,110],
+    [300,225],
+    [300,225],
+    [600,120]
   ],
   [
-    [160,55],
-    [160,55],
-    [150,112.5],
-    [150,112.5],
-    [120,130],
-    [300,60]
+    [320,110],
+    [320,110],
+    [300,224.10],
+    [300,224.10],
+    [240,260],
+    [600,120]
   ]
 ];
+
 
 HozonButton.onclick = () => {
   //let text=TextInput.value;
@@ -89,8 +92,6 @@ HozonButton.onclick = () => {
   }
   ***/
   link.click();
-}
-kesuButton.onclick = () => {
 }
 JikkouButton.onclick = () => {
   var context = canvas.getContext('2d');
@@ -148,7 +149,7 @@ JikkouButton.onclick = () => {
 }
 function pushKaoBack(context) {
   var image = new Image();
-  image.src = "顔back.png";
+  image.src = "次だ.png";
   return image;
 }
 function DrowText(text) {
@@ -174,9 +175,20 @@ function MakeMojiImage(moji) {
 function DrowResults(images,kaotype) {
   // 各画像を順番に描画
   let context = canvas.getContext('2d');//キャンパスを所得してる(？)
-  context.drawImage(images[0], 0, 0, 200, 150, 0, 0, 200, 150);//顔の後ろだけ位置は固定なため
+  context.drawImage(images[0], 0, 0, 200, 150, 0, 0, 400, 300);//顔の後ろだけ位置は固定なため
   for (var i = 0; i < images.length - 1; i++) {
     console.log(mojipos[kaotype][i][0], mojipos[kaotype][i][1], mojisize[kaotype][i][0], mojisize[kaotype][i][1]);
     context.drawImage(images[i + 1], 0, 0, 200, 150, mojipos[kaotype][i][0], mojipos[kaotype][i][1], mojisize[kaotype][i][0], mojisize[kaotype][i][1]);//配列に入ってる位置にいい感じに。
   }
 }
+
+/***
+   <span><span class="circle-big"><span class=title-up>文</span></span></span>
+    <span><span class="circle-big"><span class=title-up>字</span></span></span>
+    <span><span class="circle-big"><span class=title-up>顔</span></span></span>
+    <span><span class="circle-big"><span class=title-up>メ</span></span></span>
+    <span><span class="circle-big"><span class=title-up>ー</span></span></span>
+    <span><span class="circle-big"><span class=title-up>カ</span></span></span>
+    <span><span class="circle-big"><span class=title-up>ー</span></span></span>
+  
+ */
