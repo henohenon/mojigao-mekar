@@ -6,21 +6,20 @@
   <link rel="stylesheet" href=mojigao-maker.css>
 </head>
 <body>
-  <div>
-    <span><span class="circle-big"><span class=title-up>文</span></span></span>
-    <span><span class="circle-big"><span class=title-up>字</span></span></span>
-    <span><span class="circle-big"><span class=title-up>顔</span></span></span>
-    <span><span class="circle-big"><span class=title-up>メ</span></span></span>
-    <span><span class="circle-big"><span class=title-up>ー</span></span></span>
-    <span><span class="circle-big"><span class=title-up>カ</span></span></span>
-    <span><span class="circle-big"><span class=title-up>ー</span></span></span>
+  <div class="top-ber">
+    <img class="title-image" src="ウシャ.png" alt="文字顔メーカー" title="タイトル">
   </div>
 
-  <canvas id="board" width="150" height="150"></canvas>
-  <input id="input-text" type="text" size="100" maxlength="7">
+  <canvas id="board" width="300" height="300"></canvas>
   <br>
-  <button id="jikkou">実行</button>
-  <button id="hozon">保存</button>
+  <div class="cp_iptxt">
+    <input class="ef" id="input-text" type="text" maxlength="7" placeholder=" " >
+    <label for="input-text">7文字以内の好きな言葉を入力してください。</label>
+    <span class="focus_line"></span>
+  </div>
+  <br>
+  <button class="btn-border-bottom" id="jikkou">実行</button>
+  <button class="btn-border-bottom" id="hozon">ダウンロード</button>
   <div id="result-area"></div>
   
   <script src="./mojigao-maker.js"></script>
