@@ -149,6 +149,7 @@ JikkouButton.onclick = () => {
 }
 function pushKaoBack(context) {
   var image = new Image();
+  crossOrigin="anonymous";
   image.src = "次だ.png";
   return image;
 }
@@ -166,6 +167,7 @@ function MakeMojiImage(moji) {
   let context = canvas.getContext('2d');//キャンパスを所得してる(？)
   DrowText(moji);//文字をテキストとしてキャンバスに描画
   var image = new Image();
+  crossOrigin="anonymous";
   image.src = URLCanvas();//キャンバスをURLにしてimageに代入
   context.clearRect(0, 0, canvas.width, canvas.height);//キャンバスをクリア
 
