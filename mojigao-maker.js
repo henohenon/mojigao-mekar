@@ -149,7 +149,7 @@ JikkouButton.onclick = () => {
 }
 function pushKaoBack(context) {
   var image = new Image();
-  image.src = "次だ.png";
+  image.src = "https://github.com/henoheTK/mojigao-mekar/blob/master/%E6%AC%A1%E3%81%9F%E3%82%99.png?raw=true";
   return image;
 }
 function DrowText(text) {
