@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>文字顔メーカー</title>
-  <link rel="stylesheet" href="https://github.com/henoheTK/mojigao-mekar/blob/master/mojigao-maker.css">
+  <link rel="stylesheet" href="http://localhost:8000/lib/mojigao-make/mojigao-maker.css">
 </head>
 <body>
   <div class="top-ber">
@@ -20,7 +20,10 @@
   <br>
   <button class="btn-border-bottom" id="jikkou">実行</button>
   <button class="btn-border-bottom" id="hozon">ダウンロード</button>
-  <form method="post" action="./hiroba.html"><input type="submit" name="id" value=""></form>
+  <form method="post" action="./hiroba.html">
+    <input value="" id="url-input"></input>
+    <button type="button" id="toko">投稿</button>
+  </form>
   <div id="result-area"></div>
   
   <script src="https://github.com/henoheTK/mojigao-mekar/blob/master/mojigao-maker.js"></script>
