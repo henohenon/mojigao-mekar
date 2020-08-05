@@ -10,39 +10,6 @@ body{
   background-color: #67a9ff;  
 }
 
-.title-up{
-  vertical-align:100%;
-  margin: 0 20px;
-  position: absolute;
-}
-.title-down
-{
-  vertical-align:100%;
-  margin: 0 20px;
-  position: absolute;
-}
-.circle-one {
-  background-color:rgb(255, 117, 117);
-  width: 60px;
-  height: 60px;
-  display: inline-block;
-  border-radius: 50%;
-}
-.circle-two {
-  background-color:rgb(244, 255, 145);
-  width: 60px;
-  height: 60px;
-  display: inline-block;
-  border-radius: 50%;
-}
-.circle-big {
-  background-color:rgb(244, 255, 145);
-  width: 100px;
-  height: 100px;
-  display: inline-block;
-  border-radius: 50%;
-}
-
 
 
 
@@ -50,8 +17,8 @@ body{
 
 .cp_iptxt {
   position: relative;
-	width: 30%;
-	margin: 10px 3%;
+  width: 30%;
+  margin: 5% 35%;
   text-align: center;
 }
 .cp_iptxt input[type='text'] {
@@ -144,10 +111,4 @@ body{
 .title-image{
   width: 400px;
   height: 120px;
-}
-
-
-
-.form{
-  
 }
